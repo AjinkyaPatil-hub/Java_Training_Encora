@@ -1,3 +1,4 @@
+package com.assg.service;
 
 public class Maths {
 
@@ -32,5 +33,13 @@ public class Maths {
 		res = a * a * a;
 		System.out.println("Cube result: " + res);
 	}
+	
+	public void div(int a,int b) {
+
+		double res = a / b;
+		System.out.println("Division result: " + res);
+	}
+	
+	
 
 }
