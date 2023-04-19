@@ -2,39 +2,38 @@ package com.assg.service;
 
 public class Maths {
 
-	int res = 0;
+	double res = 0;
 
-	public void add(int a, int b) {
+	public void add(double a, double b) {
 
-		res = a + b;
+		double res = a + b;
 		System.out.println("Addition result: " + res);
 	}
 
-	public void mul(int a, int b) {
+	public void mul(double a, double b) {
 
 		res = a * b;
 		System.out.println("Multiplication result: " + res);
 	}
 
-	public void sub(int a, int b) {
+	public void sub(double a, double b) {
 
 		res = a - b;
 		System.out.println("Substraction result: " + res);
 	}
 
-	public void square(int a) {
+	public void square(double a) {
 
-		res = a * a;
-		System.out.println("Square result: " + res);
+		 res = a * a;
+		System.out.println("Square result for number: "+Math.abs(a) +" is: " + res);
 	}
 
-	public void cube(int a) {
-
-		res = a * a * a;
-		System.out.println("Cube result: " + res);
+	public void cube(double a) {
+		 res = a * a * a;
+		System.out.println("Cube result: for number "+Math.abs(a) +" is: "+ + res);
 	}
 	
-	public void div(int a,int b) {
+	public void div(double a, double b) {
 
 		double res = a / b;
 		System.out.println("Division result: " + res);
