@@ -1,4 +1,4 @@
-package com.assg.service;
+package com.assg.calculator.service;
 
 public class Maths {
 

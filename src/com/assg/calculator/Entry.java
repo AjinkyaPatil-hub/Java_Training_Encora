@@ -1,6 +1,6 @@
-package com.assg.entry;
+package com.assg.calculator;
 
-import com.assg.helper.Menu;
+import com.assg.calculator.helper.Menu;
 
 public class Entry {
 

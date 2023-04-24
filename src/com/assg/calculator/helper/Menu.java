@@ -1,8 +1,8 @@
-package com.assg.helper;
+package com.assg.calculator.helper;
 
 import java.util.Scanner;
 
-import com.assg.service.Maths;
+import com.assg.calculator.service.Maths;
 
 public class Menu {
 
