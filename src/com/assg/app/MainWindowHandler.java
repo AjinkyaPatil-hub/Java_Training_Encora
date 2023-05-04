@@ -10,7 +10,6 @@ public class MainWindowHandler implements WindowListener, MouseListener {
 	@Override
 	public void windowOpened(WindowEvent e) {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
@@ -22,7 +21,6 @@ public class MainWindowHandler implements WindowListener, MouseListener {
 
 	@Override
 	public void windowClosed(WindowEvent e) {
-
 	}
 
 	@Override

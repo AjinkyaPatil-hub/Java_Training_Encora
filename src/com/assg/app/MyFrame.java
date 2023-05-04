@@ -2,18 +2,32 @@ package com.assg.app;
 
 import java.awt.Button;
 import java.awt.Color;
-import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.Frame;
+import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.Label;
-import java.awt.Panel;
+import java.awt.MediaTracker;
 import java.awt.TextField;
+import java.awt.Toolkit;
 
 public class MyFrame extends Frame {
 
-	
+	Image img;
+
 	public MyFrame() {
 
+	}
+
+	public void update(Graphics g) {
+		paint(g);
+	}
+
+	public void paint(Graphics g) {
+		if (img != null)
+			g.drawImage(img, 330, 178, this);
+		else
+			g.clearRect(0, 0, getSize().width, getSize().height);
 	}
 
 	public MyFrame(String title, boolean visible, int x, int y, int widht, int height) {
@@ -21,26 +35,26 @@ public class MyFrame extends Frame {
 		this.setVisible(visible);
 		this.setBounds(x, y, widht, height);
 
-		//To diplay image
-		//TODO not displaying image need to look into this.
-		Panel controlPanel = new Panel(); 
-		
-		controlPanel.add(new ImageComponent("resources/Encora.jpg"));
-		controlPanel.setLayout(new FlowLayout());
-//		controlPanel.setVisible(true);
-		add(controlPanel);
-		
-		Font font = new Font("Courier", Font.PLAIN, 20);
+		// default window size when window is opened
+		this.setSize(1023, 495);
+
+		// to set image
+		MediaTracker mt = new MediaTracker(this);
+		img = Toolkit.getDefaultToolkit().getImage("C:/Users/ajinkyap/Downloads/Encora.jpg");
+		mt.addImage(img, 0);
+
+		Font font = new Font("Courier", Font.ITALIC, 20);
 
 		Label ansLabel = new Label();
-		
+
 		this.add(ansLabel);
-		
+
 		// Main Title
 		Label heading = new Label();
 		heading.setText("Welcome To Encora Calculator");
 		heading.setBounds(530, 262, 300, 30);
 		heading.setFont(font);
+		heading.setBackground(Color.orange);
 		this.add(heading);
 		this.setLayout(null);
 
@@ -48,6 +62,7 @@ public class MyFrame extends Frame {
 		Label firstLabel = new Label();
 		firstLabel.setText("Enter first number");
 		firstLabel.setBounds(450, 335, 100, 20);
+		firstLabel.setBackground(Color.LIGHT_GRAY);
 		this.add(firstLabel);
 		this.setLayout(null);
 
@@ -60,6 +75,7 @@ public class MyFrame extends Frame {
 		Label secondLabel = new Label();
 		secondLabel.setText("Enter second number");
 		secondLabel.setBounds(663, 334, 120, 20);
+		secondLabel.setBackground(Color.LIGHT_GRAY);
 		this.add(secondLabel);
 		this.setLayout(null);
 
@@ -71,25 +87,28 @@ public class MyFrame extends Frame {
 		// add button
 		Button addButton = new Button("Add");
 		addButton.setBounds(454, 410, 80, 30);
-		addButton.addActionListener(new ActionHandler(firstTf, secondTf,ansLabel));
+		addButton.setBackground(Color.PINK);
+		addButton.addActionListener(new ActionHandler(firstTf, secondTf, ansLabel));
 
 		// subtract button
 		Button subButton = new Button("Subtract");
 		subButton.setBounds(569, 408, 80, 30);
-		subButton.addActionListener(new ActionHandler(firstTf, secondTf,ansLabel));
+		subButton.setBackground(Color.PINK);
+		subButton.addActionListener(new ActionHandler(firstTf, secondTf, ansLabel));
 		this.setLayout(null);
-		
-		
+
 		// multiply button
 		Button mulButton = new Button("Multiply");
 		mulButton.setBounds(682, 410, 80, 30);
-		mulButton.addActionListener(new ActionHandler(firstTf, secondTf,ansLabel));
+		mulButton.setBackground(Color.PINK);
+		mulButton.addActionListener(new ActionHandler(firstTf, secondTf, ansLabel));
 		this.setLayout(null);
 
 		// divide button
 		Button divButton = new Button("Divide");
 		divButton.setBounds(795, 409, 80, 30);
-		divButton.addActionListener(new ActionHandler(firstTf, secondTf,ansLabel));
+		divButton.setBackground(Color.PINK);
+		divButton.addActionListener(new ActionHandler(firstTf, secondTf, ansLabel));
 		this.setLayout(null);
 
 		this.add(addButton);
