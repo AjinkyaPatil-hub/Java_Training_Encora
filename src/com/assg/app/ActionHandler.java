@@ -19,14 +19,13 @@ public class ActionHandler implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-
+		this.ansLabel.setBounds(542, 514, 250, 30);
+		Maths math = new Maths();
+		double res = 0.0;
 		try {
-
 			double firtIp = takeInput(this.firstTf.getText());
 			double secondIp = takeInput(this.secondTf.getText());
-			this.ansLabel.setBounds(542, 514, 150, 30);
-			Maths math = new Maths();
-			double res = 0.0;
+			
 			if (e.getActionCommand().equalsIgnoreCase("add")) {
 				res = math.add(firtIp, secondIp);
 				this.ansLabel.setText("Answer is =  " + res);
@@ -43,11 +42,9 @@ public class ActionHandler implements ActionListener {
 					res = math.div(firtIp, secondIp);
 					this.ansLabel.setText("Answer is =  " + res);
 				}
-
 			}
 		} catch (Exception e2) {
-			this.ansLabel.setText("!!--Invalid Input--!!");
-			System.out.println(e2.getMessage());
+			this.ansLabel.setText("!!--Invalid Input--!!" +e2.getMessage());
 		}
 
 	}

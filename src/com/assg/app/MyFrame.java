@@ -21,10 +21,13 @@ public class MyFrame extends Frame {
 		this.setVisible(visible);
 		this.setBounds(x, y, widht, height);
 
+		//To diplay image
+		//TODO not displaying image need to look into this.
 		Panel controlPanel = new Panel(); 
 		
 		controlPanel.add(new ImageComponent("resources/Encora.jpg"));
 		controlPanel.setLayout(new FlowLayout());
+//		controlPanel.setVisible(true);
 		add(controlPanel);
 		
 		Font font = new Font("Courier", Font.PLAIN, 20);
@@ -100,21 +103,4 @@ public class MyFrame extends Frame {
 		this.addMouseListener(new MainWindowHandler());
 
 	}
-
-	public MyFrame(double res) {	
-		Label ansLabel = new Label();
-		ansLabel.setText("Answer is=  "+res);
-		ansLabel.setBounds(542, 514, 100, 30);
-		this.add(ansLabel);
-		//this.setLayout(null);
-	}
-	
-	public void displayRes(double res) {
-		Label ansLabel = new Label();
-		ansLabel.setText("Answer is=  "+res);
-		ansLabel.setBounds(542, 514, 100, 30);
-		this.add(ansLabel);
-		//this.setLayout(null);
-	}
-
 }
