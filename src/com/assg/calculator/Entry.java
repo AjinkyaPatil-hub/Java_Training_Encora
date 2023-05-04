@@ -5,7 +5,7 @@ import com.assg.calculator.helper.Menu;
 public class Entry {
 
 	public static void main(String[] args) {
-		System.out.println("!!--- Welcome to Encora Calculator ---!! ");
+		System.out.println("!!--- Welcome to Encora Calculator---!! ");
 		try {
 		Menu.doOpeation();
 		}catch (Exception e) {
