@@ -37,7 +37,7 @@ public class MyFrame extends Frame {
 
 		// default window size when window is opened
 		this.setSize(1023, 495);
-
+		
 		// to set image
 		MediaTracker mt = new MediaTracker(this);
 		img = Toolkit.getDefaultToolkit().getImage("C:/Users/ajinkyap/Downloads/Encora.jpg");
@@ -52,6 +52,7 @@ public class MyFrame extends Frame {
 		// Main Title
 		Label heading = new Label();
 		heading.setText("Welcome To Encora Calculator");
+		heading.setAlignment(Label.CENTER);
 		heading.setBounds(530, 262, 300, 30);
 		heading.setFont(font);
 		heading.setBackground(Color.orange);

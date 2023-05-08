@@ -6,12 +6,10 @@ import java.awt.event.ActionListener;
 public class ButtonActionHandler implements ActionListener {
 
 	JugglerBoard jb;
-	String b;
 
-	public ButtonActionHandler(JugglerBoard board, String button) {
+	public ButtonActionHandler(JugglerBoard board) {
 
 		this.jb = board;
-		this.b = button;
 	}
 
 	@Override
@@ -20,34 +18,24 @@ public class ButtonActionHandler implements ActionListener {
 		try {
 			jb.getErrorLabel().setText("");
 			jb.getErrorLabel().setVisible(false);
-			String text3 = jb.getTfAtClock3().getText();
-			String text6 = jb.getTfAtClock6().getText();
-			String text9 = jb.getTfAtClock9().getText();
+			int text3 = Integer.parseInt(jb.getTfAtClock3().getText());
+			int text6 = Integer.parseInt(jb.getTfAtClock6().getText());
+			int text9 = Integer.parseInt(jb.getTfAtClock9().getText());
 
-			if (b.equalsIgnoreCase("cloclWiseButton")) {
-				int clcok3 = Integer.parseInt(text3) + 1;
-				jb.getTfAtClock6().setText("");
-				jb.getTfAtClock6().setText(clcok3 + "");
+			if (e.getActionCommand().equalsIgnoreCase("Clock Wise")) {
+				System.out.println("Clock-wise clocked");
+				jb.getTfAtClock6().setText("" + (text3 + 1));
 
-				int clcok6 = Integer.parseInt(text6) + 1;
-				jb.getTfAtClock9().setText("");
-				jb.getTfAtClock9().setText(clcok6 + "");
+				jb.getTfAtClock9().setText("" + (text6 + 1));
 
-				int clcok9 = Integer.parseInt(text9) + 1;
-				jb.getTfAtClock3().setText("");
-				jb.getTfAtClock3().setText(clcok9 + "");
+				jb.getTfAtClock3().setText("" + (text9 + 1));
 			} else {
-				int clcok3 = Integer.parseInt(text3) - 1;
-				jb.getTfAtClock9().setText("");
-				jb.getTfAtClock9().setText(clcok3 + "");
+				System.out.println("Anti-Clock-wise clocked");
+				jb.getTfAtClock9().setText("" + (text3 - 1));
 
-				int clcok6 = Integer.parseInt(text6) - 1;
-				jb.getTfAtClock3().setText("");
-				jb.getTfAtClock3().setText(clcok6 + "");
+				jb.getTfAtClock3().setText("" + (text6 - 1));
 
-				int clcok9 = Integer.parseInt(text9) - 1;
-				jb.getTfAtClock6().setText("");
-				jb.getTfAtClock6().setText(clcok9 + "");
+				jb.getTfAtClock6().setText("" + (text9 - 1));
 			}
 		} catch (Exception e2) {
 			jb.getErrorLabel().setVisible(true);
