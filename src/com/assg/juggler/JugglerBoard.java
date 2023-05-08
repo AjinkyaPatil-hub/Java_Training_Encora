@@ -62,13 +62,13 @@ public class JugglerBoard extends Frame {
 		Button clockWiseButton = new Button("Clock Wise");
 		clockWiseButton.setBounds(607, 642, 100, 50);
 		clockWiseButton.setBackground(Color.ORANGE);
-		clockWiseButton.addActionListener(new ButtonActionHandler(this, "cloclWiseButton"));
+		clockWiseButton.addActionListener(new ButtonActionHandler(this));
 		add(clockWiseButton);
 
 		Button antiClockWiseButton = new Button("Anti-Clock Wise");
 		antiClockWiseButton.setBounds(838, 642, 100, 50);
 		antiClockWiseButton.setBackground(Color.ORANGE);
-		antiClockWiseButton.addActionListener(new ButtonActionHandler(this, "antiClockWiseButton"));
+		antiClockWiseButton.addActionListener(new ButtonActionHandler(this));
 		add(antiClockWiseButton);
 
 		// to close window
