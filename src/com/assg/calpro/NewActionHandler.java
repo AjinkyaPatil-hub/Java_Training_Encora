@@ -40,7 +40,9 @@ public class NewActionHandler implements ActionListener {
 					cf.getAnsLabel().setText("Answer is =  " + res);
 				}
 			}
-		} catch (Exception e2) {
+		} catch (NumberFormatException nfe) {
+			cf.getAnsLabel().setText("!!--Please enter value OR Please check your entered value--!!" + nfe.getMessage());
+		}catch (Exception e2) {
 			cf.getAnsLabel().setText("!!--Invalid Input--!!" + e2.getMessage());
 		}
 	}

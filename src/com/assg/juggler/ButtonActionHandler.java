@@ -14,7 +14,7 @@ public class ButtonActionHandler implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		jb.getErrorLabel().setBounds(665, 274, 250, 30);
+		jb.getErrorLabel().setBounds(665, 274, 450, 30);
 		try {
 			jb.getErrorLabel().setText("");
 			jb.getErrorLabel().setVisible(false);
@@ -37,7 +37,11 @@ public class ButtonActionHandler implements ActionListener {
 
 				jb.getTfAtClock6().setText("" + (text9 - 1));
 			}
-		} catch (Exception e2) {
+		}catch (NumberFormatException nfe) {
+			jb.getErrorLabel().setVisible(true);
+			jb.getErrorLabel().setText("!!--Please enter number OR Please enter numberic value--!!" + nfe.getMessage());
+		} 
+		catch (Exception e2) {
 			jb.getErrorLabel().setVisible(true);
 			jb.getErrorLabel().setText("!!--Please enter all 3 values--!!" + e2.getMessage());
 		}
