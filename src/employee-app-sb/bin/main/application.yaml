@@ -1,0 +1,29 @@
+server:
+  port:  9000
+
+#compression of response
+  compression:
+    enabled: true
+    min-response-size: 4096
+    mime-types:
+    - application/json
+      
+
+#loging properties
+logging:
+ level:
+   org:
+    hibernate:
+     type: TRACE
+
+# datasource properties and query display on console
+spring:
+  datasource:
+   url: jdbc:mysql://${MYSQL_HOST}:3000/emp_db
+   username: ${username} 
+   password: ${password}
+   driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+   properties:
+      hibernate:
+       show_sql: true   
