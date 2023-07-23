@@ -1,0 +1,42 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.1.2'
+	id 'io.spring.dependency-management' version '1.1.2'
+}
+
+group = 'com.encora'
+version = '0.0.1'
+
+java {
+	sourceCompatibility = '17'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	//for spring security
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	//for tomcat,rest-apis
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	//for swagger ui 
+	implementation group: 'org.springdoc', name: 'springdoc-openapi-ui', version: '1.7.0'
+
+	//for jwt authorization
+	implementation group: 'io.jsonwebtoken', name: 'jjwt-api', version: '0.11.5'
+	runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-impl', version: '0.11.5'
+	runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-jackson', version: '0.11.5'
+
+	//for lombook	
+	implementation group: 'org.projectlombok', name: 'lombok', version: '1.18.26'
+	compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.26'
+		
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
